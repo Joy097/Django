@@ -13,6 +13,12 @@ def getproducts(request):
     serialized = pserializer(snippet, many=True)
     return Response(serialized.data,status=status.HTTP_200_OK)
 
+@api_view(['GET'])
+def getproduct(request,pk):
+    snippet = Product.objects.get(pk=pk)
+    serialized = pserializer(snippet)
+    return Response(serialized.data,status=status.HTTP_200_OK)
+
 @api_view(['POST'])
 def postproducts(request):
     serialized = pserializer(data=request.data)
