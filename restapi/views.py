@@ -1,13 +1,12 @@
-from rest_framework.generics import RetrieveAPIView, ListAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView
-from rest_framework.response import Response
+from rest_framework import generics
 from .models import Product
 from .serializers import pserializer
 
-class ProductList(ListAPIView):
+class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = pserializer
 
-class Product(RetrieveAPIView):
+class Product(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = pserializer
     lookup_field = 'pk'
