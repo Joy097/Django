@@ -12,6 +12,5 @@ urlpatterns = [
     path('add_record/', views.add_record, name='add_record'),
     path('update_record/<int:pk>', views.update_record, name='update_record'),
     path('page/', views.index),
-    path('page/cat.json', views.cat_json_view, name='cat_json'),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
