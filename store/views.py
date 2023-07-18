@@ -125,10 +125,5 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-from django.http import JsonResponse
-def cat_json_view(request):
-    with open('cat.json') as file:
-        data = json.load(file)
-    return JsonResponse(data)
 
 
