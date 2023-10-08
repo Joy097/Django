@@ -126,7 +126,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     "usermenu_links": [
-        {"name": "Download", "url": "/admin/download/page.html", "new_window": True},
+        {"name": "Download", "url": "{% static 'pdf_app/ran.txt' %}", "new_window": True},
         {"model": "auth.user"}
     ],
 
