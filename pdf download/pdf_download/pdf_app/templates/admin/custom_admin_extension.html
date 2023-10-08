@@ -1,0 +1,8 @@
+<!-- custom_admin_extension.html -->
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block content %}
+    {{ block.super }}
+    {% include "pdf_app/templates/custom_button.html" %}
+{% endblock %}
